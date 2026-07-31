@@ -1,3 +1,5 @@
+
+Package · JSON
 {
   "name": "pdf-maker",
   "private": true,
@@ -6,6 +8,7 @@
   "scripts": {
     "dev": "tauri dev",
     "build": "tauri build",
+    "build:win": "tauri build",
     "tauri": "tauri"
   },
   "devDependencies": {
