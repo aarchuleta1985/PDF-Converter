@@ -1,0 +1,15 @@
+{
+  "name": "pdf-maker",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Turn photos, text files, and Word docs into a PDF",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:win": "tauri build",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
