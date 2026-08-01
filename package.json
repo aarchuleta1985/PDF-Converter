@@ -1,0 +1,51 @@
+{
+  "name": "pdf-maker",
+  "version": "1.0.0",
+  "description": "PDF Maker - a simple desktop app for building and converting PDFs",
+  "main": "main.js",
+  "author": "mando",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis msi",
+    "dist:exe": "electron-builder --win nsis",
+    "dist:msi": "electron-builder --win msi"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.mando.pdfmaker",
+    "productName": "PDF Maker",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "msi", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "PDF Maker"
+    },
+    "msi": {
+      "shortcutName": "PDF Maker",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
